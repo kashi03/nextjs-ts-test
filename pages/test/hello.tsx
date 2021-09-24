@@ -7,7 +7,7 @@ function test2(): String {
 
 const Home: NextPage = () => {
   const [name, setName] = useState('')
-  const registerUser = async (event: FormEvent<HTMLFormElement>) => {
+  const registerUser = async (event: any) => {
     event.preventDefault()
 
     const res = await fetch(
@@ -29,7 +29,7 @@ const Home: NextPage = () => {
       <form onSubmit={registerUser}>
         <label htmlFor="name">Name</label>
         <input id="name" name="name" type="text" autoComplete="name" required/>
-        <button type="submit">Register</button>
+        <button type="submit" >Register</button>
       </form>
     </>
   )
