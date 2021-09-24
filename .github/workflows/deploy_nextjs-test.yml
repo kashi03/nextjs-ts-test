@@ -28,13 +28,13 @@ jobs:
         npm run test --if-present
 
     - name: create zip file
-      run: tar cfzh artifact.tar ./
+      run: tar cfzh /tmp/artifact.tar ./
 
     - name: Upload artifact for deployment job
       uses: actions/upload-artifact@v2
       with:
         name: node-app
-        path: artifact.tar
+        path: /tmp/artifact.tar
 
   deploy:
     runs-on: ubuntu-latest
