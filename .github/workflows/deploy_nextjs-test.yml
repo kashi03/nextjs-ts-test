@@ -47,10 +47,10 @@ jobs:
     - name: Download artifact from build job
       uses: actions/download-artifact@v2
       with:
-        name: artifact.tar && rm artifact.tar
+        name: node-app
 
     - name: unzip 
-      run: tar zcvf 
+      run: tar zcvf artifact.tar && rm artifact.tar
 
     - name: 'Deploy to Azure Web App'
       id: deploy-to-webapp
